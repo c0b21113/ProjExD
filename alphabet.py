@@ -1,4 +1,4 @@
-global lost_alp,chance,ans
+global lost_alp
 
 
 import random
