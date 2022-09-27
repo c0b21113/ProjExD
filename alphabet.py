@@ -40,7 +40,7 @@ def Answer():
         else:
             print("不正解です")
             continue
-    while chance<3:
+    while chance<2:
         ans1=input("1つ目の欠損した文字を答えてください")
         ans2=input("2つ目の欠損した文字を答えてください")
         if ans1 in ans:
