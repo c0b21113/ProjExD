@@ -29,6 +29,7 @@ def AC_click(event):
 
 def button_buf(event):
     event.widget["bg"]="#CCFFFF"
+    
 
 def button_buf2(event):
     event.widget["bg"]="#C0C0C0"
@@ -54,9 +55,6 @@ def make_e(event):
     ans=math.exp(num)
     entry.delete(0,tk.END)
     entry.insert(tk.END,ans)
-    
-
-
 
 
 entry=tk.Entry(root,justify="right",width=10,font=("Times New Roman",40))
@@ -86,21 +84,21 @@ button4.bind("<Leave>",leave_button_buf2)
 button4.grid(row=5,column=2)
 
 
-button5=tk.Button(root,text="+/-",width=4,height=2,font=("Times New Roman",30))
+button5=tk.Button(root,text="+/-",width=4,height=2,font=("Times New Roman",30),bg="yellow1")
 button5.bind("<1>",change)
 button5.bind("<Enter>",button_buf)
 button5.bind("<Leave>",leave_button_buf)
 button5.grid(row=1,column=0)
 
 
-button6=tk.Button(root,text="√",width=4,height=2,font=("Times New Roman",30))
+button6=tk.Button(root,text="√",width=4,height=2,font=("Times New Roman",30),bg="yellow1")
 button6.bind("<1>",make_sqrt)
 button6.bind("<Enter>",button_buf)
 button6.bind("<Leave>",leave_button_buf)
 button6.grid(row=1,column=1)
 
 
-button7=tk.Button(root,text="e^n",width=4,height=2,font=("Times New Roman",30))
+button7=tk.Button(root,text="e^n",width=4,height=2,font=("Times New Roman",30),bg="yellow1")
 button7.bind("<1>",make_e)
 button7.bind("<Enter>",button_buf)
 button7.bind("<Leave>",leave_button_buf)
