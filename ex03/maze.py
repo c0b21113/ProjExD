@@ -68,7 +68,6 @@ if __name__ == "__main__" :
     tori=tk.PhotoImage(file="ex03/fig/fig/3.png")
     cx,cy=300,400
     my,mx=1,1
-    count_dig=5
     canv.create_image(cx,cy,image=tori, tag="tori")
     canv.pack()
 
