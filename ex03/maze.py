@@ -29,13 +29,27 @@ def main_proc():
         mx+=1
     elif key=="Right":
         mx+=1
+    elif key=="Left":
+        mx-=1
+    elif key=="Up":
+        my-=1
+    elif key=="Down":
+        my+=1
     if maze[my][mx]==0:
         cx,cy=mx*100+50,my*100+50
-        canv.create_rectangle(cx,cy,fill="green")
     else:
         if key=="Right":
             maze[my][mx]=0
             mx-=1
+        elif key=="Left":
+            maze[my][mx]=0
+            mx+=1
+        elif key=="Up":
+            maze[my][mx]=0
+            my-=1
+        elif key=="Down":
+            maze[my][mx]=0
+            my+=1
         if key=="w":
             my+=1
         elif key=="s":
