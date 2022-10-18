@@ -1,13 +1,6 @@
-
-from this import d
 import tkinter as tk
 import tkinter.messagebox as tkm
 import maze_maker
-
-
-
-        
-
 
 
 def key_down(event):
@@ -57,8 +50,6 @@ def main_proc():
     proc=root.after(100,main_proc)
 
 
-
-
 if __name__ == "__main__" :
     root=tk.Tk()
     root.title("迷えるこうかとん")
@@ -70,15 +61,10 @@ if __name__ == "__main__" :
     my,mx=1,1
     canv.create_image(cx,cy,image=tori, tag="tori")
     canv.pack()
-
     key=""
-
     root.bind("<KeyPress>",key_down)
     root.bind("<KeyRelease>",key_up)
-
     main_proc()
-
-
     root.mainloop()
 
 
