@@ -1,4 +1,5 @@
 
+from this import d
 import tkinter as tk
 import tkinter.messagebox as tkm
 import maze_maker
@@ -19,21 +20,13 @@ def key_up(event):
 
 def main_proc():
     global cx,cy,mx,my
-    if key=="w":
-        my-=1
-    elif key=="s":
-        my+=1
-    elif key=="a":
-        mx-=1
-    elif key=="d":
+    if key=="Right" or key=="d":
         mx+=1
-    elif key=="Right":
-        mx+=1
-    elif key=="Left":
+    elif key=="Left" or key=="a":
         mx-=1
-    elif key=="Up":
+    elif key=="Up" or key=="w":
         my-=1
-    elif key=="Down":
+    elif key=="Down" or key=="s":
         my+=1
     if maze[my][mx]==0:
         cx,cy=mx*100+50,my*100+50
