@@ -60,20 +60,20 @@ def main():
                 return
 
         key_states = pg.key.get_pressed()
-        if key_states[pg.K_UP]:    tori_rct.centery -= 1
-        if key_states[pg.K_DOWN]:  tori_rct.centery += 1
-        if key_states[pg.K_LEFT]:  tori_rct.centerx -= 1
-        if key_states[pg.K_RIGHT]: tori_rct.centerx += 1
+        if key_states[pg.K_UP] or key_states[pg.K_w]:    tori_rct.centery -= 1
+        if key_states[pg.K_DOWN] or key_states[pg.K_s]:  tori_rct.centery += 1
+        if key_states[pg.K_LEFT] or key_states[pg.K_a]:  tori_rct.centerx -= 1
+        if key_states[pg.K_RIGHT] or key_states[pg.K_d]: tori_rct.centerx += 1
         yoko, tate = check_bound(tori_rct, scrn_rct)
         if yoko == -1:
-            if key_states[pg.K_LEFT]: 
+            if key_states[pg.K_LEFT] or key_states[pg.K_a]: 
                 tori_rct.centerx += 1
-            if key_states[pg.K_RIGHT]:
+            if key_states[pg.K_RIGHT] or key_states[pg.K_d]:
                 tori_rct.centerx -= 1
         if tate == -1:
-            if key_states[pg.K_UP]: 
+            if key_states[pg.K_UP] or key_states[pg.K_w]: 
                 tori_rct.centery += 1
-            if key_states[pg.K_DOWN]:
+            if key_states[pg.K_DOWN] or key_states[pg.K_s]:
                 tori_rct.centery -= 1 
         scrn_sfc.blit(tori_sfc, tori_rct) # 練習3
 
