@@ -1,5 +1,5 @@
 
-from sre_constants import SUCCESS
+
 import pygame as pg
 import sys
 from random import randint
@@ -24,13 +24,15 @@ class Screen:
         self.sfc.blit(self.bgi_sfc, self.bgi_rct)
 
 
-class Bird:
-    key_delta = {
-        pg.K_UP:    [0, -1],
-        pg.K_DOWN:  [0, +1],
-        pg.K_LEFT:  [-1, 0],
-        pg.K_RIGHT: [+1, 0],
+key_delta = {
+    pg.K_UP:    [0, -1],
+    pg.K_DOWN:  [0, +1],
+    pg.K_LEFT:  [-1, 0],
+    pg.K_RIGHT: [+1, 0],
     }
+
+
+class Bird:
 
     def __init__(self, img, zoom, xy):
         sfc = pg.image.load(img) # "fig/6.png"
@@ -51,6 +53,7 @@ class Bird:
                     self.rct.centerx -= delta[0]
                     self.rct.centery -= delta[1]
         self.blit(scr) # =scr.sfc.blit(self.sfc, self.rct)
+
 
 class setsuccess:
     def __init__(self,success_point):
@@ -80,7 +83,6 @@ class text:#Tキーを押した際に制限時間20秒で問題が表示され�
             button=tk.Button(root, text="回答",command=button_click)
             button.bind("<1>",button_click)#正誤判定の為にbind
             button.pack()
-
             entry=tk.Entry(Width=30)
             entry.insert(tk.END,"消して回答を入力してね")#回答欄の生成
             entry.pack()
@@ -156,12 +158,6 @@ def main():
                 if event.type==pg.K_ESCAPE:
                     time.sleep(5)#エスケープキーを押した時に5秒間のポーズ
                     
-
-                    
-
-
-
-
         # 練習8
         if kkt.rct.colliderect(bkd.rct): # こうかとんrctが爆弾rctと重なったら
             if perfect_body==0:#無敵回数が残っているかの確認
@@ -172,7 +168,6 @@ def main():
         if success_point==3:
             time.sleep(10)
             tkm.showinfo("ゲームクリア")
-
 
         pg.display.update() #練習2
         clock.tick(1000)
