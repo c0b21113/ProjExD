@@ -9,5 +9,6 @@ def button_click(event):
     txt=btn["text"]
     if turth==ans:
         perfect_body+=1#無敵回数を追加
+        success_point+=1
     else:
         return 

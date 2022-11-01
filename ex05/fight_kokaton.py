@@ -1,4 +1,5 @@
 
+from sre_constants import SUCCESS
 import pygame as pg
 import sys
 from random import randint
@@ -7,6 +8,9 @@ import tkinter as tk
 from tkinter import messagebox as tkm
 
 from ex05.option import button_click
+
+
+global success_point
 
 class Screen:
     def __init__(self, title, wh, bgimg):
@@ -47,6 +51,10 @@ class Bird:
                     self.rct.centerx -= delta[0]
                     self.rct.centery -= delta[1]
         self.blit(scr) # =scr.sfc.blit(self.sfc, self.rct)
+
+class setsuccess:
+    def __init__(self,success_point):
+        self.success_point=success_point
 
 
 class text:#Tキーを押した際に制限時間20秒で問題が表示され、答えると残機が増える
@@ -161,6 +169,10 @@ def main():
             else:
                 perfect_body-=1#無敵回数を消費
                 continue
+        if success_point==3:
+            time.sleep(10)
+            tkm.showinfo("ゲームクリア")
+
 
         pg.display.update() #練習2
         clock.tick(1000)
