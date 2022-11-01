@@ -6,7 +6,6 @@ from random import randint
 import time
 import tkinter as tk
 from tkinter import messagebox as tkm
-
 from ex05.option import button_click
 
 
